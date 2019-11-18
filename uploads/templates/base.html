@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <header>
+      <nav>
+          <ul>
+              <li><a href="{% url 'home' %}">Strona Główna</a></li>
+              <li><a href="{% url 'send_name' %}">Wylosuj Zwierzątko</a></li>
+              <li><a href="{% url 'about' %}">O Nas</a></li>
+          </ul>
+      </nav>
+    </header>
+    <footer>
+      <p>Strona wykonana przez Agatę Glatzel oraz Julię Udzik</p>
+    </footer>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

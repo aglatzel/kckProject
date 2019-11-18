@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>Wpisz swoje imię, aby poznać zwierzątko, którym jesteś!</h1>
+<form action="name" method="post">{% csrf_token %}
+  <p style="text-align: center; font-size: 25px;">
+  <label for="your_name">Podaj swoje imię: </label>
+  <input id="your_name" type="text" name="name">
+  <br>
+  <input type="submit" value="LOSUJ ZWIERZĄTKO">
+  </p>
+</form>
+
+{% if user_name|length > 0 %}
+<div class="">
+  <h1>Zwierzątko, którym jesteś to:</h1>
+  <h1 style="color: blue;">{{name}}</h1>
+  <p style="text-align: center;"><a style="text-align: center;" href="{{link}}">{{link}}</a></p>
+  <br>
+  <p style="text-align: center;"><img style="text-align: center;" src="{% static 'img/' %}{{image}}" / ></p>
+
+</div>
+{% elif user_name|length < 0 %}
+<p></p>
+{% endif %}
+
+{% endblock %}

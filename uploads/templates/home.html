@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h1>Cześć!</h1>
+    <h2>Czy często słyszysz, że jesteś gadatliwy jak papuga, wolny jak żółw lub zwinny jak gazela? To jest idealne miejsce, aby to sprawdzić! Chcesz wiedzieć jakim zwierzęciem jesteś? Na naszej stronie możesz sprawdzić jakie zwierzę to twój spirit animal!</h2>
+    <a href="{% url 'send_name' %}"><p style="text-align: center; font-size: 20px;">Kliknij tu, aby wylosować zwierzątko!</p></a>
+    <br>
+    <img src="/static/img/safari.png" alt=""  width="660"  height="auto" class="center">
+{% endblock %}
